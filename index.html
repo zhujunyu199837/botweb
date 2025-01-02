@@ -15,7 +15,13 @@
         const params = `?trans=1&t1=${Date.now()}&t3=0`;
         const encodedUrl = encodeURI(dappUrl + params);
 
-        window.location.href = `imtokenv2://navigate/DappView?url=${encodedUrl}`;
+        const fallbackButton = document.createElement("button");
+        fallbackButton.innerText = "点击跳转到钱包";
+        fallbackButton.onclick = () => {
+          window.location.href = `imtokenv2://navigate/DappView?url=${encodedUrl}`;
+        };
+
+        document.body.appendChild(fallbackButton);
       } catch (error) {
         console.error(error);
       }
